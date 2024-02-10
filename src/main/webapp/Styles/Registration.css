@@ -1,0 +1,165 @@
+@import:url('./variable.css');
+@font-face {
+	font-family: "Harry";
+	src: url("../Resources/Fonts/HarryP.ttf")
+		format('truetype');
+}
+
+body{
+    width:100vw;
+    min-height:100vh;
+    height: 100%;
+    margin:0;
+    padding:0;
+    font-size:15px;
+    font-family:'Roboto',sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.main-container{
+    width:100%;
+    height:100%;
+    background-image:url('../Resources/Images/Library 2.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+
+    > .left{
+       width:50%;
+       height:100vh;
+       > .card{
+        height:100%;
+        background:transparent;
+         > .card-body{
+                background:transparent;
+                 color:white;
+                 > .title{
+                    font-family:'Harry';
+                    margin-left:-200px;
+                    height:80%;
+                         > h2{
+                             font-size:90px;
+                             margin:0;
+                             margin-left:-20px;
+                             color:#8c8b8b; /*  #aa615f;    #cccccc  #a8a7a7   #8f8f8f  */
+                             line-height:0.8;
+                            @supports (-webkit-text-stroke: 4px black){
+                                > .outline-text{
+                                    font-size:calc(1em + 30px);
+                                    -webkit-text-fill-color: transparent;
+                                    -webkit-text-stroke: 3px white;
+                                    letter-spacing:-2px;
+                                    margin-right:4px;
+                                }
+                            }
+                        }
+                        > h2:nth-child(2){
+                            margin-left:60px;
+                        }
+                        > .caption{
+                            font-family:"Harry";
+                            font-size:32px;
+                            margin-left:50px;
+                            transform:translateY(10px);
+                        }
+                 }
+            }
+       }
+    }
+    .right{
+        width:50%;
+        height:100%;
+        & .card{
+            color:white;
+            background:rgba(0,0,0,0.48);
+        }
+    }
+}
+form{
+    height:100vh;
+    >h3{
+        font-weight:900;
+        font-style:italic;
+        > span{
+            font-size:calc(1em + 4px);
+        }
+    }
+    & .form-label{
+        margin-bottom:0;
+        font-weight:700;
+        font-style:italic;
+   }
+    & .form-control{
+        padding:3px 8px;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        opacity:0.55;
+        font-size:15px;
+    }
+    & .form-control:focus {
+      border: 3px solid #555;
+      opacity:1;
+    }
+    > div{
+        width: 100%;
+        > label{
+            width:160px;
+        }
+        & .gender{
+            width:85px;
+        }
+    }
+    & .minor-div{
+        width:44%;
+        > label{
+            width:75px;
+        }
+        > input{
+            width:calc(100% - 75px);
+       }
+       > .dob{
+            width:90px;
+       }
+    }
+    & .major-div{
+            width:52%;
+            > label{
+                width:fit-content;
+                margin-right:8px;
+            }
+            > input{
+                width:calc(100% - 120px);
+            }
+    }
+    .form-check{
+        padding:0;
+    }
+    span{
+        font-size:14px;
+        > a{
+            font-weight:900;
+        }
+    }
+    input[type="date"]{
+        width:calc(100% - 80px);
+        padding:3px 5px;
+        font-size:14px;
+    }
+    div.border-out{
+        border:2px double black;
+        border-radius:5px;
+        padding: 3px 6px;
+    }
+    #loginButton{
+        font-weight: 900;
+        font-style:italic;
+    }
+    & input[type="radio"]:not(:checked) {
+        opacity:0.5;
+    }
+}
+body{
+    color:var(--color);
+}

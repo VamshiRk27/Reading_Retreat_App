@@ -1,0 +1,96 @@
+@import:url('./variable.css');
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f7f7f7;
+	height:fit-content;
+}
+
+.bg-custom {
+	background-color: #009688;
+}
+
+.navbar-top {
+		background: #303f9f;
+
+		& .title {
+		font-family : "Baliana";
+		font-weight: bold;
+		font-size: 34px;
+		margin-left:100px;
+		color: deepskyblue;
+	}
+
+	& p.caption {
+		font-family: "BeautifulPeople";
+		font-size: 16px;
+		margin: 0 0 0 110px;
+		letter-spacing:2.5px;
+		font-weight: bold;
+		color: tomato;
+	}
+
+	& a{
+	width:fit-content;
+	}
+}
+
+
+.navbar {
+	color: black;
+	background: transparent;
+
+	& .nav-link:hover {
+				background-color: transparent;
+				color: white;
+				border-radius: 6px;
+                                border: 1px solid white;
+			}
+}
+
+/*		Backgroung Image for Main Page		*/
+.back-img {
+	background: url('../Resources/Images/Library.jpg');
+	height: 100vh;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	top:-60px;
+	z-index: -3;
+
+	> div {
+	position : absolute;
+	transform: translate(35vw, 180px);
+	width: fit-content;
+	height:fit-content;
+	z-index:1;
+			>form{
+				width:fit-content;
+			}
+
+			> h2 {
+				font-family: "Baliana";
+				color: yellow;
+				font-size: 54px;
+			}
+	}
+}
+
+/*  			Card Hover			*/
+.crd-ho:hover {
+	background-color: #fcf7f7;
+}
+
+.card-body>img {
+	width: 150px;
+	height: 200px;
+}
+
+/*  			Footer			*/
+div.footer {
+	background-color: #303f9f;
+	color: white;
+	padding: 10px 0;
+}

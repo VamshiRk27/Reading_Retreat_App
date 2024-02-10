@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+	font-family: "Baliana";
+	src: url("../Resources/Fonts/Baliana-lgRnD.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: "BeautifulPeople";
+	src: url("../Resources/Fonts/BeautifulPeoplePersonalUse.ttf")
+		format('truetype');
+}
+@font-face {
+	font-family: "Finger";
+	src: url("../Resources/Fonts/Finger.ttf")
+		format('truetype');
+}
+@font-face {
+	font-family: "Harry";
+	src: url("../Resources/Fonts/HarryP.ttf")
+		format('truetype');
+}
+
+
+:root {
+        /*  ------------ Fonts ------------ */
+        --font-Baliana:'Baliana';
+        --font-BeautifulPeople:'BeautifulPeople';
+        --font-Harry:'Harry';
+        --font-Finger:'Finger';
+        --main-color:blue;
+}
+
+body{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    height:100vh;
+    width:100vw;
+}

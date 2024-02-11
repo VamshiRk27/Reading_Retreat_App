@@ -7,10 +7,10 @@
 <meta charset="UTF-8">
 <title>Reading Retreat: New Registration</title>
 <%@include file="./Components/CSS Components.jsp"%>
-<link rel="stylesheet" href="./Styles/Registration.css?version=1">
+<link rel="stylesheet" href="./Styles/Registration.css">
 </head>
 <body>
-	<div class="main-container d-flex">
+	<div class="register-container d-flex">
 	<div class="left my-2">
         <div class="card">
             <div class="card-body d-flex align-items-center justify-content-center">
@@ -25,19 +25,19 @@
 	<div class="right my-2">
 		<div class="card">
             <div class="card-body">
-        	    <form action="register" method="post" enctype="multipart/form-data" class="d-flex flex-column justify-content-center">
+        	    <form onsubmit="validateInputs()" id="registrationForm" action="register" method="post" enctype="multipart/form-data" class="d-flex flex-column justify-content-center">
         		    <h3 class="text-center mb-3">Hey User<br><span>Step into the literary realm</span></h3>
 
                     <div class="mb-2 d-inline-flex align-items-center border-out">
                         <label for="customerName" class="form-label">Name </label>
-                        <input type="email" class="form-control" id="customerName" aria-describedby="customerName"
+                        <input type="text" class="form-control" id="customerName" aria-describedby="customerName"
                         name="customerName" required>
                     </div>
 
         			<div class="mb-2 d-inline-flex align-items-center border-out">
                         <label for="customerEmail" class="form-label">Email address </label>
                         <input type="email" class="form-control" id="customerEmail" aria-describedby="customerEmail"
-                        name="customerEmail" required>
+                        name="customerEmail" inputmode="email" required>
                     </div>
 
                     <div class="mb-2 d-inline-flex align-items-center justify-content-between">
@@ -48,14 +48,14 @@
                         <div class="d-inline-flex align-items-center major-div border-out">
                             <label for="customerMobile" class="form-label">Mobile Number </label>
                             <input type="tel" class="form-control" id="customerMobile" aria-describedby="customerMobile"
-                            name="customerMobile" required>
+                            name="customerMobile" inputmode="numeric" required>
                         </div>
                     </div>
 
         			<div class="w-75 form-check mb-2 d-inline-flex align-items-center border-out">
         			    <label class="form-label">Gender: </label>
         				<div class="w-100 d-inline-flex align-items-center">
-                            <label class="form-check-label gender" for="customerGender">
+                            <label class="form-check-label gender" for="customerGender" id="customerGender">
                             <input class="form-check-input mr-1" type="radio" name="customerGender" id="male" value="MALE"> Male </label>
                             <label class="form-check-label gender" for="customerGender">
                             <input class="form-check-input" type="radio" name="customerGender" id="female" value="FEMALE" checked> Female </label>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="input-group d-inline-flex align-items-center major-div border-out">
                             <label for="customerImage" class="form-label">Profile Image </label>
-                            <input type="file" class="form-control" placeholder="Profile Image" aria-label="Profile Image" aria-describedby="Profile Image" name="customerImage">
+                            <input id="customerImage" type="file" class="form-control" placeholder="Profile Image" aria-label="Profile Image" aria-describedby="Profile Image" name="customerImage" required>
                         </div>
                     </div>
 
@@ -110,7 +110,7 @@
                                 <option value="Uttar Pradesh">
                                 <option value="Uttarakhand">
                                 <option value="West Bengal">
-                                <option value="Jammu and Kashmir">
+                                <option value="Delhi">
                             </datalist>
                         </div>
 
@@ -136,5 +136,7 @@
         </div>
 	</div>
 	</div>
+
+	<script src="./Scripts/Register.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" errorPage="ErrorPage.jsp"%>
 <%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
@@ -8,6 +8,8 @@
 <title>Reading Retreat: New Registration</title>
 <%@include file="./Components/CSS Components.jsp"%>
 <link rel="stylesheet" href="./Styles/Registration.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
 	<div class="register-container d-flex">
@@ -25,7 +27,7 @@
 	<div class="right my-2">
 		<div class="card">
             <div class="card-body">
-        	    <form onsubmit="validateInputs()" id="registrationForm" action="register" method="post" enctype="multipart/form-data" class="d-flex flex-column justify-content-center">
+        	    <form onsubmit="validateInputs()" action="registration" method="post" enctype="multipart/form-data" id="registrationForm" class="d-flex flex-column justify-content-center">
         		    <h3 class="text-center mb-3">Hey User<br><span>Step into the literary realm</span></h3>
 
                     <div class="mb-2 d-inline-flex align-items-center border-out">

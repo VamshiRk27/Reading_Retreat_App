@@ -15,6 +15,7 @@ const indianStates = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "
   "Uttarakhand", "West Bengal", "Delhi"];
 
 window.onload = () =>{
+    customerDOB.setAttribute('value',getSubtractedYear(0));
     customerDOB.setAttribute('min',getSubtractedYear(70));
     customerDOB.setAttribute('max',getSubtractedYear(10));
 }
@@ -22,13 +23,19 @@ window.onload = () =>{
 function getSubtractedYear(years){
     const today=new Date();
     const oldDate=new Date(today.getFullYear() - years, today.getMonth(), today.getDate());
-    console.log();
     return oldDate.toISOString().split('T')[0];
 }
 
 form.addEventListener('submit',e => {
         e.preventDefault();
-        console.log(validateInputs());
+        try{
+            if(validateInputs()){
+                callRegisterServlet();
+           }
+        }
+        catch(err) {
+          console.log(err);
+        }
 });
 
 function validateInputs(){
@@ -40,7 +47,6 @@ function validateInputs(){
     const state=customerState.value.trim();
     const city=customerCity.value.trim();
     const address=customerAddress.value.trim();
-    console.log(name+' '+email+" "+address+" "+city+" "+password+" "+mobile+" "+state);
 
     // Name
     if(nameValidation(name)){
@@ -137,4 +143,18 @@ function setInvalid(element){
 function setValid(element){
     element.classList.remove("invalid");
     element.classList.add("valid");
+}
+
+
+
+
+
+function callRegisterServlet(){
+ // Serialize form data
+//  var formData = $("#registrationForm").serialize();
+  var formData = new FormData(document.getElementById('registrationForm'));
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/Reading_Retreat/registration", true);
+    xhttp.send(formData);
 }

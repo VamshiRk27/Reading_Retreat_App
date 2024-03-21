@@ -1,0 +1,106 @@
+form{
+    padding:0 30px;
+
+    >h3{
+        font-weight:900;
+        font-style:italic;
+        > span{
+            font-size:calc(1em + 4px);
+        }
+    }
+    > div{
+        gap:20px;
+    }
+    & .form-label{
+        margin-bottom:0;
+        font-weight:700;
+        font-style:italic;
+    }
+    & .form-control{
+        padding:3px 8px;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        opacity:0.55;
+        font-size:15px;
+    }
+    & .form-control:focus {
+        border: 3px solid #555;
+        opacity:1;
+    }
+    > div{
+        width: 100%;
+        > label{
+            width:160px;
+        }
+        & .gender{
+            width:85px;
+        }
+    }
+    & .minor-div{
+        width:44%;
+        > label{
+            width:100px;
+        }
+        > input{
+            width:calc(100% - 100px);
+        }
+        > .dob{
+            width:90px;
+        }
+    }
+    & .major-div{
+        width:52%;
+        > label{
+            width:140px;
+            margin-right:8px;
+        }
+        > .bookType{
+            width:75px;
+        }
+        > input{
+            width:calc(100% - 140px);
+        }
+    }
+    .form-check{
+        padding:0;
+    }
+    span{
+        font-size:14px;
+        > a{
+            font-weight:900;
+        }
+    }
+    input[type="date"]{
+        width:calc(100% - 80px);
+        padding:3px 5px;
+        font-size:14px;
+    }
+    div.border-out{
+        border:2px double black;
+        border-radius:5px;
+        padding: 3px 6px;
+    }
+    #loginButton{
+        font-weight: 900;
+        font-style:italic;
+    }
+    & input[type="radio"]:not(:checked) {
+        opacity:0.5;
+    }
+}
+
+/* Number Input Tag Arrows Disable*/
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#bookCategory{
+    width:50px;
+}
+

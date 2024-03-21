@@ -1,0 +1,483 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@font-face {
+	font-family: "Harry";
+	src: url("../Resources/Fonts/HarryP.ttf")format('truetype');
+}
+
+/* ---------- Root Variables ---------- */
+:root{
+    --font-Harry:"Harry";
+
+    --color-primary:#7380ec;
+    --color-danger:#ff7782;
+    --color-success:#41f1b6;
+    --color-warning:#ffbb55;
+    --color-white:#fff;
+    --color-info-dark:#7d8da1;
+    --color-info-light:#dce1eb;
+    --color-dark:#363949;
+    --color-light:rgba(132,139,200,0.18);
+    --color-primary-variant:#111e88;
+    --color-dark-variant:#677483;
+    --color-background:#f6f6f9;
+
+
+    --card-border-radius:32px;
+    --border-radius-1:6px;
+    --border-radius-2:13px;
+    --border-radius-3:19px;
+
+
+    --card-padding:28px;
+    --padding-1:19px;
+
+    --box-shadow:0 32px 48px var(--color-light);
+}
+
+/* We apply these color to switch theme the variable names are same but color change according to theme */
+.dark-theme-variables{
+    --color-background:#181a1e;
+    --color-white:#202528;
+    --color-dark:#edeffd;
+    --color-dark-variant:#a3bdcc;
+    --color-light:rgba(0,0,0,0.4);
+    --box-shadow:0 32px 48px var(var(--color-light));
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins',sans-serif;
+    font-size: 14px;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    color:var(--color-dark);
+}
+a{
+    color: var(--color-dark);
+    text-decoration:none;
+}
+img{
+    display: block;
+    width: 100%;
+}
+h1{
+    font-weight: 800;
+    font-size: 28px;
+}
+h2{
+    font-size: 13px;
+}
+h3{
+    font-size: 14px;
+}
+h4{
+    font-size: 13px;
+}
+h5{
+    font-size: 12px;
+}
+small{
+    font-size: 12px;
+}
+
+
+.text-muted{
+    color: var(--color-info-dark);
+}
+p{
+    color: var(--color-dark-variant);
+}
+b{
+    color: var(--color-dark);
+}
+.primary{
+    color: var(--color-primary);
+}
+.danger{
+    color: var(--color-danger);
+}
+.success{
+    color: var(--color-success);
+}
+.warning{
+    color: var(--color-warning);
+}
+
+
+.dashboard-container{
+    width:100%;
+    height:100vh;
+    padding:0 2%;
+    gap: 20px;
+    overflow:hidden;
+}
+
+/* ------ Side Bar ------ */
+aside{
+    min-width:150px;
+    width:150px;
+    height:94vh;
+    margin-top:15px;
+    overflow:hidden;
+}
+aside > .top{
+    width:100%;
+    height:10vh;
+}
+.top > .close{
+    display:none;
+}
+
+
+aside > div.sidebar{
+    background: var(--color-white);
+    width: 100%;
+    height: 88vh;
+    margin-top:20px;
+    border-radius:8px;
+    overflow:hidden;
+    & h3{
+        font-weight: 500;
+    }
+}
+.sidebar > a{
+    overflow:hidden;
+    width:100%;
+    color: var(--color-info-dark);
+    text-decoration:none;
+    margin:2px 0;
+    gap: 2px;
+    align-items: center;
+    position: relative;
+    height: 30px;
+    transition: all 300ms ease;
+}
+.sidebar > a:first-child{
+    margin-top:0;
+}
+.sidebar > a > span{
+    width: 24px;
+    height: 100%;
+    margin-left: 16px;
+    font-size: 14px;
+    padding:0 !important;
+    transition:all 300ms ease;
+}
+.sidebar > a > span + h3{
+    font-size: 12px;
+    width:fit-content;
+    height:100%;
+    margin:0 !important;
+}
+.sidebar > a > .message-count{
+    width:20px;
+    height:20px;
+    background: var(--color-danger);
+    color: var(--color-white) !important;
+    margin-left:15px;
+    padding: 3px 10px;
+    font-size: 10px;
+    border-radius: var(--border-radius-1);
+}
+.sidebar > a:last-child{
+    position: relative;
+    top: 75px;
+    width: 100%;
+    margin-bottom:0;
+}
+.sidebar > a.active{
+    background: var(--color-light);
+    color: var(--color-primary);
+    margin-left: 0;
+    > span{
+        color: var(--color-primary);
+        margin-left: calc(1rem - 2px); /* Here subtraction measure should be taken from parentElement:before pseudo element's half width */
+    }
+}
+.sidebar > a.active:before{
+    content: '';
+    width: 4px;
+    height: 100%;
+    background: var(--color-primary);
+}
+.sidebar > a:hover{
+    > span{
+        margin-left: 28px;
+    }
+    > .message-count{
+        margin-left: 6px;
+    }
+}
+
+
+/* ------ Main Section ------ */
+main{
+    width:calc(100% - 150px - 200px);
+    height:94vh;
+    margin-top:22px;
+    padding:3px 5px;
+    border:1.25px solid black;
+    border-radius:8px;
+}
+main > .main-container{
+    border-radius:4px;
+    width:100%;
+    height:100%;
+    overflow:hidden scroll;
+}
+main > h1{
+    width:fit-content;
+    height:fit-content;
+}
+main > .date{
+    width:fit-content;
+    height:fit-content;
+    display: inline-block;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 6px 22px;
+
+    > input[type="date"]{
+        width:100%;
+        height:100%;
+        background: transparent;
+        color: var(--color-dark);
+    }
+}
+main > .insights{
+    width:100%;
+    height:250px;
+    gap: 22px;
+}
+.insights > div{
+    width:200px;
+    height:100%;
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 16px;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+.insights > div > span{
+    padding: 6px;
+    border-radius: 50%;
+    color:var(--color-white);
+    font-size: 28px;
+}
+.insights > div > .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > h3{
+        margin: 14px 0 10px;
+        font-size: 14px;
+    }
+}
+.middle > .progress{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+.middle > .progress > svg{
+        width: 50px;
+        height: 50px;
+}
+.middle > .progress > svg > circle{
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform:translate(5px,5px);
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+.middle > .progress > .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.insights > div > small{
+    margin-top: 1.6rem;
+    display: block;
+}
+.insights > .sales > span{
+    background: var(--color-primary);
+}
+/* In nested CSS the hierarchy should be maintain to override an existing css like for circle in this case */
+.insights > .sales > .middle > .progress{
+    > svg{
+        > circle{
+            stroke: var(--color-primary);
+            stroke-dasharray: 200;
+            stroke-dashoffset: -30;
+        }
+    }
+}
+.insights > .expenses{
+    > span{
+        background: var(--color-danger);
+    }
+}
+.insights > .income{
+    > span{
+        background: var(--color-success);
+    }
+}
+.insights > div:hover{
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------ Right Section ------ */
+.right{
+    width:220px;
+    height:94vh;
+    margin-top: 22px;
+}
+.right > .right-container{
+    width:100%;
+    height:100%;
+    padding:2px 6px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+.right-container > .logo{
+    width:100%;
+    min-height:175px;
+    font-family:var(--font-Harry);
+    border:1.5px solid black;
+    border-radius:8px;
+    padding:0 5px;
+    > .title{
+        width:100%;
+        height:100%;
+        > h2{
+            font-size:36px;
+            width:fit-content;
+            height:fit-content;
+            margin-left:10px;
+            z-index:2;
+            color:#8c8b8b; /*  #aa615f;    #cccccc  #a8a7a7   #8f8f8f  */
+            line-height:0.8;
+            @supports (-webkit-text-stroke: 4px black){
+                > .outline-text{
+                    font-size:calc(1em + 30px);
+                    -webkit-text-fill-color: transparent;
+                    -webkit-text-stroke: 2px black;
+                    letter-spacing:-2px;
+                }
+            }
+        }
+        > h2:nth-child(2){
+            margin-left:35px;
+            z-index:1;
+        }
+    }
+    > .caption{
+        width:100%;
+        font-family:"Harry";
+        height:fit-content;
+        font-size:20px;
+        margin-left:5px;
+        transform:translateY(10px);
+    }
+}
+
+.right-container > .top{
+    width:100%;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 28px;
+    margin:8px 0;
+    > button{
+        width:fit-content;
+        display:none;
+    }
+    > .theme-toggler{
+        background: var(--color-light);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 1.6rem;
+        width: 4.2rem;
+        border-radius: var(--border-radius-1);
+        cursor: pointer;
+    }
+    & span{
+          font-size:1.2rem;
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+    }
+    & span.active-theme{
+          background: var(--color-primary);
+          color: var(--color-white);
+          border-radius: var(--border-radius-1);
+    }
+}
+
+.right-container > .profile-card{
+    width:100%;
+    height:fit-content;
+    text-align: center;
+    margin-top:10px;
+    border:1.5px solid black;
+    border-radius:8px;
+    padding:5px;
+    & p,& small{
+       width:100%;
+    }
+    > .profile-photo{
+        width:100%;
+        height:120px;
+        padding:5px;
+        > img{
+            width:95px;
+            height:105px;
+            border-radius:15px;
+            object-fit:cover;
+        }
+    }
+    > .info{
+        padding:5px;
+    }
+}

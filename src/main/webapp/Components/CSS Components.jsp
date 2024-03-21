@@ -29,8 +29,11 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <%-- Material Icons CDN --%>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
       rel="stylesheet">
+
+<%-- Material Symbols CDN --%>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
 <!-- Main Style Page -->
 <link rel="stylesheet" href="../Styles/ReadingRetreat.css">
